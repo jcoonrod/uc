@@ -1,2 +1,2 @@
-# uc
-Dexie-based Offline PWA Data Entry Example
+# UC - Union Coordinator App
+Based on https://github.com/akashyap2013/IndexDB_CRUD_Operations
