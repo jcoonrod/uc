@@ -117,20 +117,13 @@ function table() {
             td.textContent = data.price === data[value] ? `$ ${data[value]}` : data[value];
           });
         }
+        createEle("td", tr, td => {td.textContent='✏';td.onclick = editbtn;});
         createEle("td", tr, td => {
-          createEle("i", td, i => {
-            i.className += "fas fa-edit btnedit";
-            i.setAttribute(`data-id`, data.id);
+          createEle("span", tr, span => {
+            span.textContent='🗑';
+            span.setAttribute(`data-id`, data.id);
             // store number of edit buttons
-            i.onclick = editbtn;
-          });
-        })
-        createEle("td", tr, td => {
-          createEle("i", td, i => {
-            i.className += "fas fa-trash-alt btndelete";
-            i.setAttribute(`data-id`, data.id);
-            // store number of edit buttons
-            i.onclick = deletebtn;
+            span.onclick = deletebtn;
           });
         })
       });
