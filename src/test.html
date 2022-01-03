@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32 x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="manifest" href="../site.webmanifest">
+<link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+  <title>Union Coordinator App</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <main>
+    <h1>Union Coordinator App</h1>
+    <form>
+      <input type="text" id="userid" autocomplete="off" readonly placeholder="ID">
+      <input type="text" id="proname" autocomplete="off" placeholder="Product Name">
+      <input type="text" id="seller" autocomplete="off" placeholder="Seller">
+      <input type="text" id="price" autocomplete="off" placeholder="Price">
+    </form>
+    <section>
+      <button style="background-color:green;" id="btn-create">Create</button>
+      <button style="background-color:blue;"id="btn-read">Read</button>
+      <button style="background-color:orange;"id="btn-update">Update</button>
+      <button style="background-color:red;"id="btn-delete">Delete All</button>
+    </section>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Product Name</th><th>Seller</th><th>Price</th><th>Edit</th><th>Delete</th></tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+    <div id="notfound"></div>
+  </main>
+
+  <!-- Labels -->
+  <div class="w-100 btn btn-success insertmsg">Data Inserted Successfully...!</div>
+  <div class="w-100 btn btn-warning updatemsg">Data Updated..! Refresh Database To See Result</div>
+  <div class="w-100 btn btn-danger deletemsg">Data Deleted..!</div>
+
+  <!-- Include Dexie -->
+  <script src="../js/dexie.js"></script>
+
+  <!-- Custom main file-->
+  <script src="../js/main.js" type="module"></script>
+</body>
+
+</html>

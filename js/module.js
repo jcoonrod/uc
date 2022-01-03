@@ -1,15 +1,12 @@
+const dropdown = (dbtable) => {
+
+}
+
 const productsdb = (dbname, table) => {
   const db = new Dexie(dbname);
   db.version(1).stores(table);
   db.open();
-
   return db;
-  /**
-       * const db = new Dexie('myDb');
-          db.version(1).stores({
-          friends: `name, age`
-      });
-       */
 };
 
 const bulkcreate = (dbtable, data) => {
@@ -81,3 +78,4 @@ export {
   getData,
   SortObj
 };
+

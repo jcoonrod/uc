@@ -117,13 +117,20 @@ function table() {
             td.textContent = data.price === data[value] ? `$ ${data[value]}` : data[value];
           });
         }
-        createEle("td", tr, td => {td.textContent='✏';td.onclick = editbtn;});
         createEle("td", tr, td => {
-          createEle("span", tr, span => {
-            span.textContent='🗑';
-            span.setAttribute(`data-id`, data.id);
+          createEle("i", td, i => {
+            i.textContent = 'Edit';
+            i.setAttribute(`data-id`, data.id);
             // store number of edit buttons
-            span.onclick = deletebtn;
+            i.onclick = editbtn;
+          });
+        })
+        createEle("td", tr, td => {
+          createEle("i", td, i => {
+            i.textContent = 'Delete';
+            i.setAttribute(`data-id`, data.id);
+            // store number of edit buttons
+            i.onclick = deletebtn;
           });
         })
       });
@@ -132,6 +139,7 @@ function table() {
     }
 
   });
+
 }
 
 const editbtn = (event) => {
